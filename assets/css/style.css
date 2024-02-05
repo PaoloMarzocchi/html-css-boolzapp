@@ -40,7 +40,7 @@ ul{
 }
 .debug .left{
     background-color: blue;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 .debug .right{
     background-color: purple;
@@ -68,6 +68,19 @@ ul{
     overflow-y: scroll;
 }
 
+.debug .right-header{
+    & .contact{
+        background-color: yellow;
+    }
+    & .tools{
+        background-color: yellowgreen;
+        width: 3.5rem;
+    }
+}
+
+.debug .right-footer{
+    background-color: brown;
+}
 /* #endregion Debug */
 
 .wrapper{
@@ -90,14 +103,14 @@ ul{
         flex-basis: 60%;
     }
 }
-
+/* #region Left section*/
 .left-header{
     background-color: var(--boolz-header);
     
     & .profile{
         width: 3rem;
     }
-    & nav{
+    & .tools{
         flex-grow: 1;
     }
 }
@@ -120,6 +133,48 @@ ul{
         flex-grow: 1;
     }
 }
+/* #endregion Left section*/
+
+/* #region Right section */
+    .right{
+        flex-direction: column;
+    }
+    .right-header{
+        height: 3rem;
+        background-color: var(--boolz-header);
+
+        & .contact{
+            flex-grow: 1;
+        }
+    }
+
+    .right-main{
+        flex-basis: calc(100% - 6rem);
+        overflow-y: scroll;
+    }
+
+    .right-footer{
+        height: 3rem;
+    }
+
+    .chat-container{
+        width:90%;
+        margin: 0 auto;
+        padding: 1rem 0;
+        flex-direction: column;
+
+        & div{
+            width: 17rem;
+            margin: 1rem 0;
+            background-color: peru;
+        }
+        & div:first-child{
+            align-self: flex-end;
+            background-color: var(--boolz-pop);
+        }
+    }
+/* #endregion Right section */
+
 /* #region RESPONSIVE */
 @media screen and (max-width:991px) {
     .site-container{
@@ -132,7 +187,7 @@ ul{
             flex-basis: calc(100% - 3rem);
         }
     }
-    .left nav,.notification, .search, .contacts .info-user{
+    .left .tools,.notification, .search, .contacts .info-user{
         display: none;
     }
 }
@@ -145,6 +200,10 @@ ul{
         & > .right{
             flex-basis: 100%;
         }
+    }
+
+    .right .tools{
+        display: none;
     }
 }
 /* #endregion RESPONSIVE */
