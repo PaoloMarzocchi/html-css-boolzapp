@@ -24,7 +24,6 @@ body{
 
 ul{
     list-style: none;
-    overflow-y: scroll;
 }
 /* #endregion Common */
 
@@ -63,10 +62,10 @@ ul{
 .debug .contacts > li{
     height: 3.5rem;
 }
-.debug .contacts{
+/* .debug .contacts{
     height: 30rem;
     overflow-y: scroll;
-}
+} */
 
 .debug .right-header{
     & .contact{
@@ -114,7 +113,9 @@ ul{
         flex-grow: 1;
     }
 }
-  
+  .left-main{
+    flex-direction: column;
+  }
 .notification{
     background-color: var(--boolz-select);
 }
@@ -123,8 +124,8 @@ ul{
 }
 .contacts{
     background-color: white;
-    height: 30rem;
-    overflow-y: scroll;
+    flex-basis: calc(100% - 5.5rem);
+    overflow-y: auto;
 
     & .user{
         width: 3rem;
@@ -150,7 +151,7 @@ ul{
 
     .right-main{
         flex-basis: calc(100% - 6rem);
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .right-footer{
