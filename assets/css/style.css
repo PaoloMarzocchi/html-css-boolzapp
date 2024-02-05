@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px dashed;
+    /* border: 1px dashed; */
 }
 /* #region Color Palette */
 :root{
@@ -37,22 +37,21 @@ ul{
 .debug .site-container{
     background-color: aqua;
 }
-.debug .left{
+/* .debug .left{
     background-color: blue;
-    overflow-y: hidden;
-}
+} */
 .debug .right{
     background-color: purple;
 }
-.debug .left-header{
+/* .debug .left-header{
     height: 3rem;
     & .profile{
         background-color: orangered;
     }
     & nav{
         background-color: olive;
-    }
-}
+    } */
+/* }
 .debug .notification{
     height: 3.5rem;
 }
@@ -61,7 +60,7 @@ ul{
 }
 .debug .contacts > li{
     height: 3.5rem;
-}
+} */
 /* .debug .contacts{
     height: 30rem;
     overflow-y: scroll;
@@ -106,12 +105,28 @@ ul{
 /* #region Left section*/
 .left-header{
     background-color: var(--boolz-header);
+    /* height: 3rem; */
+    padding: 1rem;
     
     & .profile{
         width: 3rem;
+
+        & img{
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
     }
     & .tools{
         flex-grow: 1;
+        text-align: end;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: x-large;
+        color: var(--boolz-header-txt);
+        & *{
+            padding:0 0.3rem;
+        }
     }
 }
   .left-main{
@@ -120,20 +135,24 @@ ul{
   }
 .notification{
     background-color: var(--boolz-select);
+    height: 3.5rem;
 }
 .search{
     background-color: var(--boolz-footer);
+    height: 2rem;
 }
 .contacts{
     background-color: white;
     flex-basis: calc(100% - 5.5rem);
     overflow-y: auto;
-
-    & .user{
-        width: 3rem;
-    }
-    & .info-user{
-        flex-grow: 1;
+    & li{
+        height: 3.5rem;
+        & .user{
+            width: 3rem;
+        }
+        & .info-user{
+            flex-grow: 1;
+        }
     }
 }
 /* #endregion Left section*/
