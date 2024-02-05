@@ -97,6 +97,7 @@ ul{
     
     & > .left{
         flex-basis: 40%;
+        height: 100%;
     }
     & > .right{
         flex-basis: 60%;
@@ -115,6 +116,7 @@ ul{
 }
   .left-main{
     flex-direction: column;
+    height: 100%;
   }
 .notification{
     background-color: var(--boolz-select);
