@@ -3,7 +3,31 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* #region Color Palette */
+:root{
+    --boolz-background-primary: #009688;
+    --boolz-background-secondary: #DADBD3;
+    --boolz-header: #EAEAEA;
+    --boolz-header-txt: #B1B1B1;
+    --boolz-footer: #F3EEEA;
+    --boolz-footer-txt: #6B7376;
+    --boolz-select: #8EDAFC;
+    --boolz-pop: #D5F9BA;
+}
+/* #region Color Palette */
 
+/* #region Common */
 body{
     font-family: 'Lato', sans-serif;
+}
+/* #endregion Common */
+
+/* #region Debug */
+
+/* #endregion Debug */
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(var(--boolz-background-primary) 20%, var(--boolz-background-secondary) 20%);
 }
