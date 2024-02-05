@@ -21,6 +21,11 @@
 body{
     font-family: 'Lato', sans-serif;
 }
+
+ul{
+    list-style: none;
+    overflow-y: scroll;
+}
 /* #endregion Common */
 
 /* #region Utilities */
@@ -35,10 +40,34 @@ body{
 }
 .debug .left{
     background-color: blue;
+    overflow-y: scroll;
 }
 .debug .right{
     background-color: purple;
 }
+.debug .left-header{
+    height: 3rem;
+    & .profile{
+        background-color: orangered;
+    }
+    & nav{
+        background-color: olive;
+    }
+}
+.debug .notification{
+    height: 3.5rem;
+}
+.debug .search{
+    height: 2rem;
+}
+.debug .contacts > li{
+    height: 3.5rem;
+}
+.debug .contacts{
+    height: 30rem;
+    overflow-y: scroll;
+}
+
 /* #endregion Debug */
 
 .wrapper{
@@ -62,18 +91,49 @@ body{
     }
 }
 
+.left-header{
+    background-color: var(--boolz-header);
+    
+    & .profile{
+        width: 3rem;
+    }
+    & nav{
+        flex-grow: 1;
+    }
+}
+  
+.notification{
+    background-color: var(--boolz-select);
+}
+.search{
+    background-color: var(--boolz-footer);
+}
+.contacts{
+    background-color: white;
+    height: 30rem;
+    overflow-y: scroll;
 
+    & .user{
+        width: 3rem;
+    }
+    & .info-user{
+        flex-grow: 1;
+    }
+}
 /* #region RESPONSIVE */
 @media screen and (max-width:991px) {
     .site-container{
         width: 100%;
         height: 100%;
         & > .left{
-            flex-basis: 10%;
+            flex-basis: content;
         }
         & > .right{
-            flex-basis: 90%;
+            flex-basis: calc(100% - 3rem);
         }
+    }
+    .left nav,.notification, .search, .contacts .info-user{
+        display: none;
     }
 }
 
