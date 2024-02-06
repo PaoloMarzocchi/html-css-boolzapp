@@ -33,6 +33,11 @@ img {
     object-fit: cover;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 /* #endregion Common */
 
 /* #region Utilities */
@@ -234,12 +239,13 @@ img {
         font-size: x-large;
         color: var(--boolz-header-txt);
         justify-content: flex-end;
-        
-        &  *{
+
+        & * {
             padding: 0 0.3rem;
         }
     }
 }
+
 /* #endregion Right Header */
 
 /* #region Right Main */
@@ -250,18 +256,48 @@ img {
     padding: 1rem 3rem;
     flex-direction: column;
 
-    & > div {
+    &>div {
         width: 20rem;
         margin: 0.5rem 0;
-        padding: 1rem; 
+        padding: 1rem;
         position: relative;
-        border-radius: 10px ;
+        border-radius: 10px;
 
-        & i, span{ 
+        & i,
+        span {
             color: var(--boolz-header-txt);
         }
 
-        & span{
+        & i {
+            height: fit-content;
+            transition: all 0.5s ease-in-out;
+        }
+
+        & .menu {
+            display: none;
+            position: absolute;
+            left: 90%;
+            top: 2rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: var(--boolz-footer-txt);
+            background-color: var(--boolz-footer);
+            box-shadow: inset -1px -1px 2px var(--boolz-footer-txt);
+            border-radius: 10px;
+            padding: 0.5rem;
+
+            & li{
+                padding: 0.3rem 0;
+                transition: all 0.5s ease-in-out;
+            }
+
+            li:hover{
+                filter: opacity(60%);
+            }
+        }
+
+        & span {
             position: absolute;
             right: 0.2rem;
             bottom: 0.2rem;
@@ -269,7 +305,7 @@ img {
         }
     }
 
-    & .received{
+    & .received {
         background-color: white;
     }
 
@@ -278,17 +314,22 @@ img {
         background-color: var(--boolz-pop);
     }
 }
+
+.right-main i:hover>.menu {
+    display: block;
+}
+
 /* #endregion Right Main */
 
 /* #region Right Footer */
-.right-footer{
+.right-footer {
     height: 5.2rem;
     background-color: var(--boolz-footer);
     align-items: center;
     padding: 1rem 0;
     border-left: 1px solid var(--boolz-header-txt);
-    
-    & div{
+
+    & div {
         flex-grow: 1;
         height: 100%;
         background-color: white;
@@ -297,13 +338,14 @@ img {
         color: var(--boolz-footer-txt);
     }
 
-    & i{
+    & i {
         width: 5rem;
         font-size: x-large;
         color: var(--boolz-footer-txt);
         text-align: center;
     }
 }
+
 /* #endregion Right Footer */
 
 /* #endregion Right section */
