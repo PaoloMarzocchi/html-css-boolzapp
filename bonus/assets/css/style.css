@@ -24,6 +24,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+
 ul {
     list-style: none;
 }
@@ -173,7 +174,9 @@ a{
     background-color: white;
     flex-basis: calc(100% - 14.4rem);
     overflow-y: auto;
-
+    scrollbar-width: thin;
+    scrollbar-color:  var(--boolz-background-primary) white;
+    
     & li {
         height: 5.2rem;
         padding: 1rem;
@@ -252,6 +255,8 @@ a{
 .right-main {
     flex-basis: calc(100% - 10.4rem);
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color:  var(--boolz-background-primary) white;
     background-image: url(../img/mine.jpg);
     padding: 1rem 3rem;
     flex-direction: column;
@@ -270,7 +275,7 @@ a{
 
         & i {
             height: fit-content;
-            transition: all 0.5s ease-in-out;
+           /*  transition: all 0.5s ease-in-out; */
         }
 
         & .menu {
@@ -319,6 +324,7 @@ a{
     display: block;
 }
 
+
 /* #endregion Right Main */
 
 /* #region Right Footer */
@@ -343,9 +349,31 @@ a{
         font-size: x-large;
         color: var(--boolz-footer-txt);
         text-align: center;
+        animation-name: tremble;
+        animation-duration: 5s;
+    }
+    & i:hover{
+        filter: opacity(50%);
     }
 }
 
+@keyframes tremble {
+    0%{
+            transform: rotate(0);
+    }
+    25%{
+            transform: rotate(-70deg);
+    }
+    50%{
+            transform: rotate(70deg);
+    }
+    75%{
+            transform: rotate(-70deg);
+    }
+    100%{
+            transform: rotate(0);
+    }
+}
 /* #endregion Right Footer */
 
 /* #endregion Right section */
